@@ -18,13 +18,11 @@
 bool is_alien_hit(bn::fixed_point crosshair, bn::fixed_point alien)
 {
     //if (crosshair.y() >= (alien.y() - 4) && crosshair.y() <= (alien.y() + 4))
-    if (bn::abs(crosshair.y() - alien.y()) < 4)
+    if (bn::abs(crosshair.y() - alien.y()) <= 4 && bn::abs(crosshair.x() - alien.x()) <= 4)
     {
         //if (crosshair.x() > (alien.x() - 4) && crosshair.x() <= (alien.y() + 4))
-        if (bn::abs(crosshair.x() - alien.y()) < 4)
-        {
-            return true;
-        }
+        //if (bn::abs(crosshair.x() - alien.y()) <= 4)
+        return true;
     }
     return false;
 }
